@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bro</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #f2c400;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .contenedor {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .mensaje {
+      color: white;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 40px;
+    }
+
+    .pregunta {
+      color: #ff4fa3;
+      font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+
+    .botones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+    }
+
+    .boton {
+      background: white;
+      color: #111;
+      border: none;
+      border-radius: 14px;
+      padding: 18px 26px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .boton:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <div class="mensaje">
+      Bro, lo que has hecho está guapísimo. Gracias por aportar I+D+i a este grupo de cavernícolas. Te quiero tela.
+    </div>
+
+    <div class="pregunta">
+      ¿Me vas a hacer huevos rellenos?
+    </div>
+
+    <div class="botones">
+      <button class="boton" onclick="alert('Sabía que ibas a decir que sí 😎')">SI</button>
+      <button class="boton" onclick="alert('SI, PORQUE TE QUIERO BRO 💖')">SI, PORQUE TE QUIERO BRO</button>
+    </div>
+  </div>
+</body>
+</html>
