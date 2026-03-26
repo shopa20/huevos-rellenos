@@ -9,31 +9,33 @@
     body {
         margin: 0;
         padding: 0;
-        background-color: #FFD700; /* amarillo */
+        background-color: #FFD700;
         font-family: "Comic Sans MS", "Comic Sans", cursive;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
         text-align: center;
+        overflow: hidden;
     }
 
     .container {
-        max-width: 700px;
+        max-width: 800px;
         padding: 20px;
     }
 
     h1 {
         color: white;
-        font-size: 28px;
+        font-size: 36px;
         line-height: 1.4;
+        animation: aparecer 1s ease;
     }
 
     .question {
         color: pink;
-        font-size: 22px;
+        font-size: 26px;
         margin-top: 30px;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
     }
 
     .buttons {
@@ -43,10 +45,10 @@
     }
 
     button {
-        padding: 15px;
-        font-size: 16px;
+        padding: 18px;
+        font-size: 18px;
         border: none;
-        border-radius: 10px;
+        border-radius: 12px;
         cursor: pointer;
         background-color: white;
         color: black;
@@ -55,7 +57,26 @@
     }
 
     button:hover {
-        transform: scale(1.05);
+        transform: scale(1.07);
+    }
+
+    /* Animación entrada */
+    @keyframes aparecer {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Efecto temblor */
+    .shake {
+        animation: shake 0.4s;
+    }
+
+    @keyframes shake {
+        0% { transform: translate(1px, 1px); }
+        25% { transform: translate(-2px, 2px); }
+        50% { transform: translate(2px, -2px); }
+        75% { transform: translate(-2px, -1px); }
+        100% { transform: translate(1px, -2px); }
     }
 </style>
 
@@ -83,14 +104,26 @@
 
 <script>
 function hablarBro() {
-    const texto = "BRO BRO BRO BRO QUE PASA BRO BRO BRO QUE PASA";
+    // Texto optimizado para que diga "BRO" bien
+    const texto = "Bro bro bro bro, que pasa bro, bro bro bro, que pasa bro";
+    
     const voz = new SpeechSynthesisUtterance(texto);
     voz.lang = "es-ES";
-    voz.rate = 1.1;
-    voz.pitch = 1.2;
+    voz.rate = 0.9;
+    voz.pitch = 1.3;
+
     speechSynthesis.speak(voz);
+
+    // Efecto temblor
+    document.body.classList.add("shake");
+    setTimeout(() => {
+        document.body.classList.remove("shake");
+    }, 400);
 }
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
